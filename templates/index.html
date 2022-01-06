@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <section class="slider_section">
+        <div id="myCarousel" class="carousel slide banner-main" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="first-slide" width="100%"  src="{% static 'hmcar/images/carbanner.jpg' %}" alt="First slide">
+                    <div class="container">
+                        <div class="carousel-caption relative">
+                            <span> </span>
+                            <h1>Free pick up and drop</h1>
+                            <p>reviews</p>
+                            <a class="buynow" href="{% url 'contact' %}">Book Now</a>
+                            <ul class="social_icon">
+                                <li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                                <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <i class='fa fa-angle-left'></i>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <i class='fa fa-angle-right'></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5 col-lg-5 col-md-5 co-sm-l2">
+                    <div class="about_img">
+                        <figure><img src="{% static 'hmcar/images/car.jpg' %}" alt="img" /></figure>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7 col-md-7 co-sm-l2">
+                    <div class="about_box">
+                        <h3>About Us</h3>
+                        <span>Car Tub Car Wash in Chelavoor, Kozhikode</span>
+                        <p>Car Tub Car Wash in Kozhikode is one of the leading businesses in the Leather Car Seat Cover Dealers. Also known for Leather Car Seat Cover Dealers, Car Cleaning Services, Car Foam Washing Services, Car Polishing Services, Car Accessory Dealers, Car Seat Cover Dealers, Car Washing Services and much more. Find Address, Contact Number, Reviews & Ratings, Photos, Maps of Car Tub Car Wash, Kozhikode.</p>
+
+                    </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- end about -->
+
+    <!-- brand -->
+
+    <div class="brand">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <h2>Our Products</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="brand-bg">
+            <div class="container">
+                <div class="row">
+                    {% for i in prods %}
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 mrgn">
+                        <div class="brand_box">
+                            <img src="{{i.img.url}}" alt="img" />
+                            <h3>$<strong class="red">{{i.price}}</strong></h3>
+                            <span>{{i.name}}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="col-md-12">
+                    <a class="read-more">See More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- end brand -->
+    <!-- clients -->
+    <div class="clients">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <h2>what say our clients</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clients_red">
+        <div class="container">
+            <div id="testimonial_slider" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                    <li data-target="#testimonial_slider" data-slide-to="0" class=""></li>
+                    <li data-target="#testimonial_slider" data-slide-to="1" class="active"></li>
+                    <li data-target="#testimonial_slider" data-slide-to="2" class=""></li>
+                </ul>
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                --------------reviews just carousel-item for inactives.............---------------
+
+                    <div class="carousel-item active">
+
+                        <div class="testomonial_section">
+                            <div class="full center">
+                            </div>
+                            <div class="full testimonial_cont text_align_center cross_layout">
+                                <div class="cross_inner">
+                                    <h3>Due markes<br><strong class="ornage_color">Rental</strong></h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit ess</i>
+                                    </p>
+                                    <div class="full text_align_center margin_top_30">
+                                        <img src="{% static 'hmcar/icon/testimonial_qoute.png' %}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+------------------------------------------------------
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- end clients -->
+    <!-- contact -->
+
+{% endblock %}
+

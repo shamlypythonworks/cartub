@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color:yellow;
+}
+
+* {
+  box-sizing: content-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: yellow;
+}
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-color: yellow;
+}
+
+.right {
+  right: 0;
+  background-color: red;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 50%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  opacity: 0.9;
+}
+.side-by-side {
+  display: flex;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="centered">
+      <p>Already have an account? <a href="#">Sign in</a></p>
+      <h1>login</h1>
+      <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+          <label for="username"><b>Username</b></label><br>
+          <input type="text" placeholder="Enter Username" name="username"  required><br>
+          <label for="psw"><b>Password</b></label><br>
+          <input type="password" placeholder="Enter Password" name="password"  required><br>
+          <hr>
+          <button type="submit" class="registerbtn" name="lgin" >Login</button>
+          <div>
+              {% for message in messages %}
+                    <h4 >{{message}}</h4>
+              {% endfor %}
+          </div>
+      </form>
+</div>
+</body>
+
+

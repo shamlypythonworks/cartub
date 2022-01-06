@@ -1,0 +1,11 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<body>
+{% for i in pr %}
+    {{i.name}}<br><br>
+    <img src="{{i.img.url}}" alt="img" /><br>
+{% endfor %}
+</body>
+{% endblock %}
